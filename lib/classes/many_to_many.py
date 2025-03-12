@@ -68,18 +68,11 @@ class Author:
             if article.title == title and article.magazine == magazine:
                 raise Exception("Article already exists for this magazine with the same title.")
         
+        print(f"Adding article: {title} to magazine: {magazine.name}")  # Debug statement
         article = Article(self, magazine, title)
+        print(f"Article added: {article.title} by {self.name}")  # Debug statement
         self._articles.append(article)  # Add the article to the author's articles
         return article
-
-
-
-
-
-
-
-
-
 
     def topic_areas(self):
         if not self._articles:
